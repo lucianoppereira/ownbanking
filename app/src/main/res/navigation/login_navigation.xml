@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.yacarex.ownbanking.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_register_form"
+            app:destination="@id/registerFormFragment"
+            app:popUpTo="@id/loginFragment" />
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/homeActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.yacarex.ownbanking.ui.HomeActivity"
+        android:label="HomeActivity" />
+    <fragment
+        android:id="@+id/registerFormFragment"
+        android:name="com.yacarex.ownbanking.onboarding.ui.fragments.RegisterFormFragment"
+        android:label="fragment_register_form"
+        tools:layout="@layout/fragment_register_form" >
+        <action
+            android:id="@+id/action_registerForm_to_registerIdScan"
+            app:destination="@id/registerIdScanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerIdScanFragment"
+        android:name="com.yacarex.ownbanking.onboarding.ui.fragments.RegisterIdScanFragment"
+        android:label="fragment_id_scan"
+        tools:layout="@layout/fragment_id_scan" >
+        <action
+            android:id="@+id/action_registerIdScan_to_registerFinish"
+            app:destination="@id/registerFinishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFinishFragment"
+        android:name="com.yacarex.ownbanking.onboarding.ui.fragments.RegisterFinishFragment"
+        android:label="fragment_register_finish"
+        tools:layout="@layout/fragment_register_finish" >
+        <action
+            android:id="@+id/action_registerFinish_to_home"
+            app:destination="@id/homeActivity" />
+    </fragment>
+</navigation>

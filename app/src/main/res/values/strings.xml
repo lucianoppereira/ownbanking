@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Own Banking</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_personal_details">Personal Details</string>
+    <string name="title_thank_you">Thank you!</string>
+
+    <string name="field_email">Email</string>
+    <string name="field_password">Password</string>
+
+    <string name="button_log_in">Log in</string>
+    <string name="button_register">Register</string>
+
+    <string name="separator_or">or</string>
+    <string name="field_last_name">Last Name</string>
+    <string name="field_first_name">First Name</string>
+    <string name="field_repeat_password">Repeat password</string>
+    <string name="button_continue">Continue</string>
+    <string name="sample_email">roberto.gonzalez@gmail.com</string>
+    <string name="sample_surname">Gonzalez</string>
+    <string name="sample_name">Roberto</string>
+    <string name="sample_password">12345678</string>
+    <string name="button_register_finish">Go to dashboard</string>
+    <string name="description_congrats_message">Tu cuenta ha sido registrada existosamente!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_account">Account</string>
+    <string name="label_transfer">Transfer</string>
+    <string name="description_take_photo">Toma una foto para identificarte</string>
+    <string name="button_take_photo">Tomar foto</string>
+    <string name="title_identification">Identification</string>
+    <string name="error_field_inconsistence">Los campos deben coincidir</string>
+    <string name="error_field_invalid">Debe ser un email válido</string>
+    <string name="error_field_empty">Debe completar este campo</string>
+</resources>
