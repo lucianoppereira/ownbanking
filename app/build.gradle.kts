@@ -63,12 +63,13 @@ dependencies {
     implementation("androidx.camera:camera-view:$cameraX")
     implementation("androidx.camera:camera-extensions:$cameraX")
 
-    //Firebase
+    // Firebase
     implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
     implementation("com.google.firebase:firebase-analytics:21.5.1")
     implementation("com.google.firebase:firebase-auth:22.3.1")
     implementation("com.google.firebase:firebase-firestore:24.10.3")
 
+    // Hilt
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
 

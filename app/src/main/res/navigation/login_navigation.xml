@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.yacarex.ownbanking.ui.login.LoginFragment"
+        android:name="com.yacarex.ownbanking.ui.login.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -24,7 +24,7 @@
         android:label="HomeActivity" />
     <fragment
         android:id="@+id/registerFormFragment"
-        android:name="com.yacarex.ownbanking.onboarding.ui.fragments.RegisterFormFragment"
+        android:name="com.yacarex.ownbanking.ui.onboarding.fragments.RegisterFormFragment"
         android:label="fragment_register_form"
         tools:layout="@layout/fragment_register_form" >
         <action
@@ -33,20 +33,28 @@
     </fragment>
     <fragment
         android:id="@+id/registerIdScanFragment"
-        android:name="com.yacarex.ownbanking.onboarding.ui.fragments.RegisterIdScanFragment"
+        android:name="com.yacarex.ownbanking.ui.onboarding.fragments.RegisterIdScanFragment"
         android:label="fragment_id_scan"
         tools:layout="@layout/fragment_id_scan" >
         <action
             android:id="@+id/action_registerIdScan_to_registerFinish"
             app:destination="@id/registerFinishFragment" />
+        <action
+            android:id="@+id/action_scanIdFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFinishFragment"
-        android:name="com.yacarex.ownbanking.onboarding.ui.fragments.RegisterFinishFragment"
+        android:name="com.yacarex.ownbanking.ui.onboarding.fragments.RegisterFinishFragment"
         android:label="fragment_register_finish"
         tools:layout="@layout/fragment_register_finish" >
         <action
             android:id="@+id/action_registerFinish_to_home"
             app:destination="@id/homeActivity" />
     </fragment>
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.yacarex.ownbanking.ui.onboarding.fragments.CameraFragment"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" />
 </navigation>

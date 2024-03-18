@@ -28,6 +28,7 @@ class HomeActivity : AppCompatActivity() {
             )
         )
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

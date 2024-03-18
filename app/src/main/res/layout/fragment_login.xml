@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/spacing_24"
     android:clipToPadding="false"
-    tools:context=".ui.login.LoginFragment">
+    tools:context=".ui.login.fragments.LoginFragment">
+
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/cardview_dark_background"
-        app:cardElevation="8dp"
+        android:layout_margin="@dimen/spacing_24"
+        android:layout_gravity="center"
         android:clipToPadding="false"
+        app:cardElevation="@dimen/spacing_12"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +39,7 @@
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/userTextField"
+                android:id="@+id/emailTF"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -47,16 +49,17 @@
                 app:layout_constraintTop_toBottomOf="@id/titleTextView">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/userEditText"
+                    android:id="@+id/emailET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/field_email"
+                    android:lines="1"
                     tools:text="@string/sample_email"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/passwordTextField"
+                android:id="@+id/passTextField"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,28 +67,29 @@
                 app:endIconMode="password_toggle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/userTextField">
+                app:layout_constraintTop_toBottomOf="@+id/emailTF">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/passwordTV"
+                    android:id="@+id/passTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/field_password"
                     android:inputType="textPassword"
+                    android:lines="1"
                     tools:text="@string/sample_password"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/loginBtn"
+                style="@style/Base.TextAppearance.AppCompat.Button.Custom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:backgroundTint="#B02767"
                 android:text="@string/button_log_in"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/passwordTextField" />
+                app:layout_constraintTop_toBottomOf="@+id/passTextField" />
 
             <include
                 android:id="@+id/separatorLayout"
@@ -99,10 +103,10 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/registerBtn"
+                style="@style/Base.TextAppearance.AppCompat.Button.Custom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_16"
-                android:backgroundTint="#B02767"
                 android:text="@string/button_register"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -112,5 +116,8 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <include
+        android:id="@+id/loading"
+        layout="@layout/loading_overlay_layout" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

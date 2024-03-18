@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -15,28 +16,39 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yacarex.ownbanking.R
 import com.yacarex.ownbanking.databinding.ActivityLoginBinding
 import com.yacarex.ownbanking.databinding.FragmentHomeBinding
+import com.yacarex.ownbanking.ui.BaseFragment
+import com.yacarex.ownbanking.ui.onboarding.utils.Fields
+import dagger.hilt.android.AndroidEntryPoint
 
-class HomeFragment : Fragment() {
+@AndroidEntryPoint
+class HomeFragment : BaseFragment<FragmentHomeBinding>(
+    FragmentHomeBinding::inflate
+) {
 
-    private val binding by lazy {
-        FragmentHomeBinding.inflate(layoutInflater)
+    private val viewModel: HomeViewModel by viewModels()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.root
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val root = binding.root
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+    override fun fieldValidationSuccess() {
 
-        //_binding = FragmentHomeBinding.inflate(inflater, container, false)
+    }
 
-        homeViewModel.text.observe(viewLifecycleOwner) {}
+    override fun fieldEmptyError(field: Fields) {
 
-        binding.navView
+    }
 
-        return binding.root
+    override fun fieldValidError(field: Fields) {
+
+    }
+
+    override fun passInconsistencyError() {
+
+    }
+
+    override fun authenticationError() {
+
     }
 }

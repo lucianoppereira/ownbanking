@@ -6,12 +6,6 @@
     app:startDestination="@id/transferencesFragment">
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.yacarex.ownbanking.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.yacarex.ownbanking.ui.accountInfo.AccountInfoFragment"
         android:label="@string/title_notifications"
@@ -21,4 +15,9 @@
         android:name="com.yacarex.ownbanking.ui.transferences.TransferFragment"
         android:label="fragment_transferences"
         tools:layout="@layout/fragment_transfer" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.yacarex.ownbanking.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>

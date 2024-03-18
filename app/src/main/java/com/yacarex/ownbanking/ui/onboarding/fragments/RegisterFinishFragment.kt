@@ -1,4 +1,4 @@
-package com.yacarex.ownbanking.onboarding.ui.fragments
+package com.yacarex.ownbanking.ui.onboarding.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
